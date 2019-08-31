@@ -49,7 +49,7 @@ jobs:
     public: true
     plan: 
       - get: ci-code
-      #- get: docker-compose-deployment
+      - get: docker-compose-deployment
       - get: web-content
         trigger: true
         passed: [collect-source-test-code]
