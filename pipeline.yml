@@ -13,7 +13,7 @@ resources:
     type: git
     icon: github-circle 
     source: 
-      uri: "https://github.com/nayamama/hr_project_test.git"
+      uri: "https://github.com/nayamama/hr_test.git"
       branch: master
 
   - name: docker-compose-deployment
@@ -30,7 +30,7 @@ resources:
     type: git
     icon: github-circle 
     source:
-      uri: https://github.com/nayamama/maomao_ci.git
+      uri: https://github.com/nayamama/hr_ci.git
       branch: master
 
 jobs:
@@ -46,5 +46,3 @@ jobs:
     - task: testing
       file: ci-code/web_testing.yml
 
-  
-      
