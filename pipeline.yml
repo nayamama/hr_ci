@@ -23,7 +23,7 @@ resources:
     source: 
       uri: "git@github.com:nayamama/maomao_docker_compose.git"
       branch: master
-      private_key: {{private-key}}
+      private_key: ((private-key))
 
   - name: ci-code
     public: true
