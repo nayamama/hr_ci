@@ -30,7 +30,7 @@ resources:
     type: git
     icon: github-circle 
     source:
-      uri: 
+      uri: https://github.com/nayamama/maomao_ci.git
       branch: master
 
 jobs:
