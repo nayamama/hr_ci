@@ -1,0 +1,50 @@
+resources:
+  - name: web-content
+    public: true
+    type: git
+    icon: github-circle 
+    source: 
+      uri: "https://github.com/nayamama/hr_project.git"
+      branch: master
+      #private_key: {{private-key}}
+
+  - name: web-test
+    public: true
+    type: git
+    icon: github-circle 
+    source: 
+      uri: "https://github.com/nayamama/hr_project_test.git"
+      branch: master
+
+  - name: docker-compose-deployment
+    public: true
+    type: git
+    icon: github-circle 
+    source: 
+      uri: "git@github.com:nayamama/maomao_docker_compose.git"
+      branch: master
+      private_key: {{private-key}}
+
+  - name: ci-code
+    public: true
+    type: git
+    icon: github-circle 
+    source:
+      uri: 
+      branch: master
+
+jobs:
+  - name: collect-source-test-code
+    plan:
+    - in_parallel:
+      - get: web-content
+        trigger: true
+      - get: web-test
+        trigger: true
+      - get: ci-code
+        trigger: true
+    - task: testing
+      file: ci-code/web_testing.yml
+
+  
+      
