@@ -49,6 +49,8 @@ jobs:
     public: true
     plan: 
       - get: ci-code
+        trigger: true
+        passed: [collect-source-test-code]
       - get: docker-compose-deployment
       - get: web-content
         trigger: true
