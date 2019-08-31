@@ -7,6 +7,8 @@ sudo apt-get -y install git
 
 ls -al
 
+git clone docker-compose-deployment update-git
+
 cp -rf web-content update-git/web
 
 cd update-git

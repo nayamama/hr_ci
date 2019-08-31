@@ -61,5 +61,11 @@ jobs:
         params:
           repository: update-git
 
-  
+  #- name: deploy-to-publication
+  #  public: true
+  #  plan: 
+  #    - get: docker-compose-deployment
+  #    - get: ci-code
+  #    - task: deploy
+  #      file: ci-code/deploy.yml
 
