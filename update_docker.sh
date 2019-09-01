@@ -9,7 +9,7 @@ ls -al
 
 git clone docker-compose-deployment update-git
 
-cp -rf web-content update-git/web
+cp -TR web-content update-git/web
 
 cd update-git
 
