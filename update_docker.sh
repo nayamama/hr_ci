@@ -3,13 +3,14 @@
 set -ex
 
 apt-get update && apt-get -y install sudo
-sudo apt-get -y install git
+sudo apt-get -y install git rsync
 
 ls -al
 
 git clone docker-compose-deployment update-git
 
-cp -TR web-content update-git/web
+#cp -TR web-content update-git/web
+rsync -avrh --delete web-content/ update-git/web
 
 cd update-git
 
