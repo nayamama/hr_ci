@@ -2,9 +2,10 @@
 
 set -ex
 
+cd /var/lib/docker/hr_app/maomao_docker_compose
+
 docker-compose stop
 
-cd /var/lib/docker/hr_app/maomao_docker_compose
 git pull 
 
 docker-compose build
