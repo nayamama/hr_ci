@@ -61,11 +61,15 @@ jobs:
         params:
           repository: update-git
 
-  #- name: deploy-to-publication
-  #  public: true
-  #  plan: 
-  #    - get: docker-compose-deployment
-  #    - get: ci-code
-  #    - task: deploy
-  #      file: ci-code/deploy.yml
+  - name: deploy-to-publication
+    public: true
+    plan: 
+      - get: docker-compose-deployment
+        trigger: true
+        passed: [upgrade-docker-compose]
+      - get: ci-code
+      - task: deploy
+        file: ci-code/deploy.yml
+        params:
+          PRIVATE_KEY: ((private-key))
 
